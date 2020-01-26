@@ -13,8 +13,8 @@ namespace MVCMoviesApp
         {
             routes.MapRoute(
                 "Movies", // route
-                "Movies/{name}", // URL with parameters
-                new { controller = "Movies", action = "Search", name = UrlParameter.Optional } //parameter defaults
+                "Movies/{action}/{name}", // URL with parameters
+                new { controller = "Movies", action = UrlParameter.Optional, name = UrlParameter.Optional } //parameter defaults
             );
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
