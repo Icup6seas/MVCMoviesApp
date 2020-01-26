@@ -9,9 +9,16 @@ namespace MVCMoviesApp.Controllers
     public class MoviesController : Controller
     {
         // GET: Movies
-        public ActionResult Index()
+        public ActionResult Index(string type)
         {
-            return View();
+            string t = HttpUtility.HtmlEncode(type);
+            if (t == "m")
+            {
+                ViewBag.Title = "Movie Index";
+                return View("ManagerIndex");
+            }
+            else
+                return View();
         }
         public ContentResult Search(string name)
         {
