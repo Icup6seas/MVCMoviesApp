@@ -11,6 +11,12 @@ namespace MVCMoviesApp
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapRoute(
+                "Movies", // route
+                "Movies/{name}", // URL with parameters
+                new { controller = "Movies", action = "Search", name = UrlParameter.Optional } //parameter defaults
+            );
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(

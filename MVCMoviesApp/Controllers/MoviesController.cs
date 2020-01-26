@@ -13,5 +13,10 @@ namespace MVCMoviesApp.Controllers
         {
             return View();
         }
+        public ContentResult Search(string name)
+        {
+            var input = HttpUtility.HtmlEncode(name);
+            return Content(input);
+        }
     }
 }
